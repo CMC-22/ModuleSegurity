@@ -3,40 +3,56 @@
   "WorkspaceRootPath": "C:\\Users\\MariaPaula Gutierrez\\Downloads\\ModuleSegurity Nuevo\\ModuleSecurity\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E21F1841-3F76-45C8-AC40-6ACE7F3781DF}|Entity\\Entity.csproj|c:\\users\\mariapaula gutierrez\\downloads\\modulesegurity nuevo\\modulesecurity\\entity\\dto\\modulodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E21F1841-3F76-45C8-AC40-6ACE7F3781DF}|Entity\\Entity.csproj|solutionrelative:entity\\dto\\modulodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B1F75A48-C36E-4A2A-B8B6-7B480D9ED72E}|Bussines\\Bussines.csproj|c:\\users\\mariapaula gutierrez\\downloads\\modulesegurity nuevo\\modulesecurity\\bussines\\implements\\modulobusiness.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1F75A48-C36E-4A2A-B8B6-7B480D9ED72E}|Bussines\\Bussines.csproj|solutionrelative:bussines\\implements\\modulobusiness.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E21F1841-3F76-45C8-AC40-6ACE7F3781DF}|Entity\\Entity.csproj|c:\\users\\mariapaula gutierrez\\downloads\\modulesegurity nuevo\\modulesecurity\\entity\\dto\\viewdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E21F1841-3F76-45C8-AC40-6ACE7F3781DF}|Entity\\Entity.csproj|solutionrelative:entity\\dto\\viewdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{415C5914-CD0D-48E4-97EE-A71D8C558E4D}|Data\\Data.csproj|c:\\users\\mariapaula gutierrez\\downloads\\modulesegurity nuevo\\modulesecurity\\data\\interface\\imodulodata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{415C5914-CD0D-48E4-97EE-A71D8C558E4D}|Data\\Data.csproj|solutionrelative:data\\interface\\imodulodata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E21F1841-3F76-45C8-AC40-6ACE7F3781DF}|Entity\\Entity.csproj|c:\\users\\mariapaula gutierrez\\downloads\\modulesegurity nuevo\\modulesecurity\\entity\\dto\\userroledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E21F1841-3F76-45C8-AC40-6ACE7F3781DF}|Entity\\Entity.csproj|solutionrelative:entity\\dto\\userroledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B1F75A48-C36E-4A2A-B8B6-7B480D9ED72E}|Bussines\\Bussines.csproj|c:\\users\\mariapaula gutierrez\\downloads\\modulesegurity nuevo\\modulesecurity\\bussines\\interface\\imodulobusiness.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1F75A48-C36E-4A2A-B8B6-7B480D9ED72E}|Bussines\\Bussines.csproj|solutionrelative:bussines\\interface\\imodulobusiness.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E21F1841-3F76-45C8-AC40-6ACE7F3781DF}|Entity\\Entity.csproj|c:\\users\\mariapaula gutierrez\\downloads\\modulesegurity nuevo\\modulesecurity\\entity\\dto\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E21F1841-3F76-45C8-AC40-6ACE7F3781DF}|Entity\\Entity.csproj|solutionrelative:entity\\dto\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B1F75A48-C36E-4A2A-B8B6-7B480D9ED72E}|Bussines\\Bussines.csproj|c:\\users\\mariapaula gutierrez\\downloads\\modulesegurity nuevo\\modulesecurity\\bussines\\interface\\iviewbusiness.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1F75A48-C36E-4A2A-B8B6-7B480D9ED72E}|Bussines\\Bussines.csproj|solutionrelative:bussines\\interface\\iviewbusiness.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E21F1841-3F76-45C8-AC40-6ACE7F3781DF}|Entity\\Entity.csproj|c:\\users\\mariapaula gutierrez\\downloads\\modulesegurity nuevo\\modulesecurity\\entity\\dto\\roleviewdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E21F1841-3F76-45C8-AC40-6ACE7F3781DF}|Entity\\Entity.csproj|solutionrelative:entity\\dto\\roleviewdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B1F75A48-C36E-4A2A-B8B6-7B480D9ED72E}|Bussines\\Bussines.csproj|c:\\users\\mariapaula gutierrez\\downloads\\modulesegurity nuevo\\modulesecurity\\bussines\\interface\\iuserrolebusiness.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1F75A48-C36E-4A2A-B8B6-7B480D9ED72E}|Bussines\\Bussines.csproj|solutionrelative:bussines\\interface\\iuserrolebusiness.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E21F1841-3F76-45C8-AC40-6ACE7F3781DF}|Entity\\Entity.csproj|c:\\users\\mariapaula gutierrez\\downloads\\modulesegurity nuevo\\modulesecurity\\entity\\dto\\roledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E21F1841-3F76-45C8-AC40-6ACE7F3781DF}|Entity\\Entity.csproj|solutionrelative:entity\\dto\\roledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B1F75A48-C36E-4A2A-B8B6-7B480D9ED72E}|Bussines\\Bussines.csproj|c:\\users\\mariapaula gutierrez\\downloads\\modulesegurity nuevo\\modulesecurity\\bussines\\interface\\iuserbusiness.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1F75A48-C36E-4A2A-B8B6-7B480D9ED72E}|Bussines\\Bussines.csproj|solutionrelative:bussines\\interface\\iuserbusiness.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E21F1841-3F76-45C8-AC40-6ACE7F3781DF}|Entity\\Entity.csproj|c:\\users\\mariapaula gutierrez\\downloads\\modulesegurity nuevo\\modulesecurity\\entity\\dto\\persondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E21F1841-3F76-45C8-AC40-6ACE7F3781DF}|Entity\\Entity.csproj|solutionrelative:entity\\dto\\persondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B1F75A48-C36E-4A2A-B8B6-7B480D9ED72E}|Bussines\\Bussines.csproj|c:\\users\\mariapaula gutierrez\\downloads\\modulesegurity nuevo\\modulesecurity\\bussines\\interface\\iroleviewbusiness.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1F75A48-C36E-4A2A-B8B6-7B480D9ED72E}|Bussines\\Bussines.csproj|solutionrelative:bussines\\interface\\iroleviewbusiness.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E21F1841-3F76-45C8-AC40-6ACE7F3781DF}|Entity\\Entity.csproj|c:\\users\\mariapaula gutierrez\\downloads\\modulesegurity nuevo\\modulesecurity\\entity\\dto\\dataselectdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E21F1841-3F76-45C8-AC40-6ACE7F3781DF}|Entity\\Entity.csproj|solutionrelative:entity\\dto\\dataselectdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B1F75A48-C36E-4A2A-B8B6-7B480D9ED72E}|Bussines\\Bussines.csproj|c:\\users\\mariapaula gutierrez\\downloads\\modulesegurity nuevo\\modulesecurity\\bussines\\interface\\irolebusiness.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1F75A48-C36E-4A2A-B8B6-7B480D9ED72E}|Bussines\\Bussines.csproj|solutionrelative:bussines\\interface\\irolebusiness.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E21F1841-3F76-45C8-AC40-6ACE7F3781DF}|Entity\\Entity.csproj|c:\\users\\mariapaula gutierrez\\downloads\\modulesegurity nuevo\\modulesecurity\\entity\\context\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E21F1841-3F76-45C8-AC40-6ACE7F3781DF}|Entity\\Entity.csproj|solutionrelative:entity\\context\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B1F75A48-C36E-4A2A-B8B6-7B480D9ED72E}|Bussines\\Bussines.csproj|c:\\users\\mariapaula gutierrez\\downloads\\modulesegurity nuevo\\modulesecurity\\bussines\\interface\\ipersonbusiness.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1F75A48-C36E-4A2A-B8B6-7B480D9ED72E}|Bussines\\Bussines.csproj|solutionrelative:bussines\\interface\\ipersonbusiness.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1F75A48-C36E-4A2A-B8B6-7B480D9ED72E}|Bussines\\Bussines.csproj|c:\\users\\mariapaula gutierrez\\downloads\\modulesegurity nuevo\\modulesecurity\\bussines\\implements\\viewbusiness.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1F75A48-C36E-4A2A-B8B6-7B480D9ED72E}|Bussines\\Bussines.csproj|solutionrelative:bussines\\implements\\viewbusiness.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1F75A48-C36E-4A2A-B8B6-7B480D9ED72E}|Bussines\\Bussines.csproj|c:\\users\\mariapaula gutierrez\\downloads\\modulesegurity nuevo\\modulesecurity\\bussines\\implements\\userrolebusiness.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1F75A48-C36E-4A2A-B8B6-7B480D9ED72E}|Bussines\\Bussines.csproj|solutionrelative:bussines\\implements\\userrolebusiness.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1F75A48-C36E-4A2A-B8B6-7B480D9ED72E}|Bussines\\Bussines.csproj|c:\\users\\mariapaula gutierrez\\downloads\\modulesegurity nuevo\\modulesecurity\\bussines\\implements\\userbusiness.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1F75A48-C36E-4A2A-B8B6-7B480D9ED72E}|Bussines\\Bussines.csproj|solutionrelative:bussines\\implements\\userbusiness.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1F75A48-C36E-4A2A-B8B6-7B480D9ED72E}|Bussines\\Bussines.csproj|c:\\users\\mariapaula gutierrez\\downloads\\modulesegurity nuevo\\modulesecurity\\bussines\\implements\\roleviewbusiness.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1F75A48-C36E-4A2A-B8B6-7B480D9ED72E}|Bussines\\Bussines.csproj|solutionrelative:bussines\\implements\\roleviewbusiness.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,123 +62,175 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ViewDto.cs",
-              "DocumentMoniker": "C:\\Users\\MariaPaula Gutierrez\\Downloads\\ModuleSegurity Nuevo\\ModuleSecurity\\Entity\\DTO\\ViewDto.cs",
-              "RelativeDocumentMoniker": "Entity\\DTO\\ViewDto.cs",
-              "ToolTip": "C:\\Users\\MariaPaula Gutierrez\\Downloads\\ModuleSegurity Nuevo\\ModuleSecurity\\Entity\\DTO\\ViewDto.cs",
-              "RelativeToolTip": "Entity\\DTO\\ViewDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-31T04:51:53.578Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "UserRoleDto.cs",
-              "DocumentMoniker": "C:\\Users\\MariaPaula Gutierrez\\Downloads\\ModuleSegurity Nuevo\\ModuleSecurity\\Entity\\DTO\\UserRoleDto.cs",
-              "RelativeDocumentMoniker": "Entity\\DTO\\UserRoleDto.cs",
-              "ToolTip": "C:\\Users\\MariaPaula Gutierrez\\Downloads\\ModuleSegurity Nuevo\\ModuleSecurity\\Entity\\DTO\\UserRoleDto.cs",
-              "RelativeToolTip": "Entity\\DTO\\UserRoleDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "IModuloBusiness.cs",
+              "DocumentMoniker": "C:\\Users\\MariaPaula Gutierrez\\Downloads\\ModuleSegurity Nuevo\\ModuleSecurity\\Bussines\\Interface\\IModuloBusiness.cs",
+              "RelativeDocumentMoniker": "Bussines\\Interface\\IModuloBusiness.cs",
+              "ToolTip": "C:\\Users\\MariaPaula Gutierrez\\Downloads\\ModuleSegurity Nuevo\\ModuleSecurity\\Bussines\\Interface\\IModuloBusiness.cs",
+              "RelativeToolTip": "Bussines\\Interface\\IModuloBusiness.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-31T04:51:37.148Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UserDto.cs",
-              "DocumentMoniker": "C:\\Users\\MariaPaula Gutierrez\\Downloads\\ModuleSegurity Nuevo\\ModuleSecurity\\Entity\\DTO\\UserDto.cs",
-              "RelativeDocumentMoniker": "Entity\\DTO\\UserDto.cs",
-              "ToolTip": "C:\\Users\\MariaPaula Gutierrez\\Downloads\\ModuleSegurity Nuevo\\ModuleSecurity\\Entity\\DTO\\UserDto.cs",
-              "RelativeToolTip": "Entity\\DTO\\UserDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-31T04:51:17.934Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "RoleViewDto.cs",
-              "DocumentMoniker": "C:\\Users\\MariaPaula Gutierrez\\Downloads\\ModuleSegurity Nuevo\\ModuleSecurity\\Entity\\DTO\\RoleViewDto.cs",
-              "RelativeDocumentMoniker": "Entity\\DTO\\RoleViewDto.cs",
-              "ToolTip": "C:\\Users\\MariaPaula Gutierrez\\Downloads\\ModuleSegurity Nuevo\\ModuleSecurity\\Entity\\DTO\\RoleViewDto.cs",
-              "RelativeToolTip": "Entity\\DTO\\RoleViewDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-31T04:51:00.737Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "RoleDto.cs",
-              "DocumentMoniker": "C:\\Users\\MariaPaula Gutierrez\\Downloads\\ModuleSegurity Nuevo\\ModuleSecurity\\Entity\\DTO\\RoleDto.cs",
-              "RelativeDocumentMoniker": "Entity\\DTO\\RoleDto.cs",
-              "ToolTip": "C:\\Users\\MariaPaula Gutierrez\\Downloads\\ModuleSegurity Nuevo\\ModuleSecurity\\Entity\\DTO\\RoleDto.cs",
-              "RelativeToolTip": "Entity\\DTO\\RoleDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-31T04:50:07.163Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "PersonDto.cs",
-              "DocumentMoniker": "C:\\Users\\MariaPaula Gutierrez\\Downloads\\ModuleSegurity Nuevo\\ModuleSecurity\\Entity\\DTO\\PersonDto.cs",
-              "RelativeDocumentMoniker": "Entity\\DTO\\PersonDto.cs",
-              "ToolTip": "C:\\Users\\MariaPaula Gutierrez\\Downloads\\ModuleSegurity Nuevo\\ModuleSecurity\\Entity\\DTO\\PersonDto.cs",
-              "RelativeToolTip": "Entity\\DTO\\PersonDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-31T04:49:52.836Z",
+              "WhenOpened": "2024-08-31T05:35:39.017Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ModuloDto.cs",
-              "DocumentMoniker": "C:\\Users\\MariaPaula Gutierrez\\Downloads\\ModuleSegurity Nuevo\\ModuleSecurity\\Entity\\DTO\\ModuloDto.cs",
-              "RelativeDocumentMoniker": "Entity\\DTO\\ModuloDto.cs",
-              "ToolTip": "C:\\Users\\MariaPaula Gutierrez\\Downloads\\ModuleSegurity Nuevo\\ModuleSecurity\\Entity\\DTO\\ModuloDto.cs",
-              "RelativeToolTip": "Entity\\DTO\\ModuloDto.cs",
+              "Title": "ModuloBusiness.cs",
+              "DocumentMoniker": "C:\\Users\\MariaPaula Gutierrez\\Downloads\\ModuleSegurity Nuevo\\ModuleSecurity\\Bussines\\Implements\\ModuloBusiness.cs",
+              "RelativeDocumentMoniker": "Bussines\\Implements\\ModuloBusiness.cs",
+              "ToolTip": "C:\\Users\\MariaPaula Gutierrez\\Downloads\\ModuleSegurity Nuevo\\ModuleSecurity\\Bussines\\Implements\\ModuloBusiness.cs",
+              "RelativeToolTip": "Bussines\\Implements\\ModuloBusiness.cs",
+              "ViewState": "AgIAADoAAAAAAAAAAAAzwEIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-31T05:38:14.599Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IModuloData.cs",
+              "DocumentMoniker": "C:\\Users\\MariaPaula Gutierrez\\Downloads\\ModuleSegurity Nuevo\\ModuleSecurity\\Data\\Interface\\IModuloData.cs",
+              "RelativeDocumentMoniker": "Data\\Interface\\IModuloData.cs",
+              "ToolTip": "C:\\Users\\MariaPaula Gutierrez\\Downloads\\ModuleSegurity Nuevo\\ModuleSecurity\\Data\\Interface\\IModuloData.cs",
+              "RelativeToolTip": "Data\\Interface\\IModuloData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-31T06:42:36.24Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IViewBusiness.cs",
+              "DocumentMoniker": "C:\\Users\\MariaPaula Gutierrez\\Downloads\\ModuleSegurity Nuevo\\ModuleSecurity\\Bussines\\Interface\\IViewBusiness.cs",
+              "RelativeDocumentMoniker": "Bussines\\Interface\\IViewBusiness.cs",
+              "ToolTip": "C:\\Users\\MariaPaula Gutierrez\\Downloads\\ModuleSegurity Nuevo\\ModuleSecurity\\Bussines\\Interface\\IViewBusiness.cs",
+              "RelativeToolTip": "Bussines\\Interface\\IViewBusiness.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-31T04:49:16.971Z",
+              "WhenOpened": "2024-08-31T05:38:11.331Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IUserRoleBusiness.cs",
+              "DocumentMoniker": "C:\\Users\\MariaPaula Gutierrez\\Downloads\\ModuleSegurity Nuevo\\ModuleSecurity\\Bussines\\Interface\\IUserRoleBusiness.cs",
+              "RelativeDocumentMoniker": "Bussines\\Interface\\IUserRoleBusiness.cs",
+              "ToolTip": "C:\\Users\\MariaPaula Gutierrez\\Downloads\\ModuleSegurity Nuevo\\ModuleSecurity\\Bussines\\Interface\\IUserRoleBusiness.cs",
+              "RelativeToolTip": "Bussines\\Interface\\IUserRoleBusiness.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-31T05:37:50.335Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IUserBusiness.cs",
+              "DocumentMoniker": "C:\\Users\\MariaPaula Gutierrez\\Downloads\\ModuleSegurity Nuevo\\ModuleSecurity\\Bussines\\Interface\\IUserBusiness.cs",
+              "RelativeDocumentMoniker": "Bussines\\Interface\\IUserBusiness.cs",
+              "ToolTip": "C:\\Users\\MariaPaula Gutierrez\\Downloads\\ModuleSegurity Nuevo\\ModuleSecurity\\Bussines\\Interface\\IUserBusiness.cs",
+              "RelativeToolTip": "Bussines\\Interface\\IUserBusiness.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-31T05:37:12.897Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IRoleViewBusiness.cs",
+              "DocumentMoniker": "C:\\Users\\MariaPaula Gutierrez\\Downloads\\ModuleSegurity Nuevo\\ModuleSecurity\\Bussines\\Interface\\IRoleViewBusiness.cs",
+              "RelativeDocumentMoniker": "Bussines\\Interface\\IRoleViewBusiness.cs",
+              "ToolTip": "C:\\Users\\MariaPaula Gutierrez\\Downloads\\ModuleSegurity Nuevo\\ModuleSecurity\\Bussines\\Interface\\IRoleViewBusiness.cs",
+              "RelativeToolTip": "Bussines\\Interface\\IRoleViewBusiness.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-31T05:36:52.097Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "DataSelectDto.cs",
-              "DocumentMoniker": "C:\\Users\\MariaPaula Gutierrez\\Downloads\\ModuleSegurity Nuevo\\ModuleSecurity\\Entity\\DTO\\DataSelectDto.cs",
-              "RelativeDocumentMoniker": "Entity\\DTO\\DataSelectDto.cs",
-              "ToolTip": "C:\\Users\\MariaPaula Gutierrez\\Downloads\\ModuleSegurity Nuevo\\ModuleSecurity\\Entity\\DTO\\DataSelectDto.cs",
-              "RelativeToolTip": "Entity\\DTO\\DataSelectDto.cs",
+              "Title": "IRoleBusiness.cs",
+              "DocumentMoniker": "C:\\Users\\MariaPaula Gutierrez\\Downloads\\ModuleSegurity Nuevo\\ModuleSecurity\\Bussines\\Interface\\IRoleBusiness.cs",
+              "RelativeDocumentMoniker": "Bussines\\Interface\\IRoleBusiness.cs",
+              "ToolTip": "C:\\Users\\MariaPaula Gutierrez\\Downloads\\ModuleSegurity Nuevo\\ModuleSecurity\\Bussines\\Interface\\IRoleBusiness.cs",
+              "RelativeToolTip": "Bussines\\Interface\\IRoleBusiness.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-31T04:49:01.351Z",
+              "WhenOpened": "2024-08-31T05:36:30.41Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "ApplicationDBContext.cs",
-              "DocumentMoniker": "C:\\Users\\MariaPaula Gutierrez\\Downloads\\ModuleSegurity Nuevo\\ModuleSecurity\\Entity\\Context\\ApplicationDBContext.cs",
-              "RelativeDocumentMoniker": "Entity\\Context\\ApplicationDBContext.cs",
-              "ToolTip": "C:\\Users\\MariaPaula Gutierrez\\Downloads\\ModuleSegurity Nuevo\\ModuleSecurity\\Entity\\Context\\ApplicationDBContext.cs",
-              "RelativeToolTip": "Entity\\Context\\ApplicationDBContext.cs",
-              "ViewState": "AgIAAD0AAAAAAAAAAAAkwE0AAAA8AAAAAAAAAA==",
+              "Title": "IPersonBusiness.cs",
+              "DocumentMoniker": "C:\\Users\\MariaPaula Gutierrez\\Downloads\\ModuleSegurity Nuevo\\ModuleSecurity\\Bussines\\Interface\\IPersonBusiness.cs",
+              "RelativeDocumentMoniker": "Bussines\\Interface\\IPersonBusiness.cs",
+              "ToolTip": "C:\\Users\\MariaPaula Gutierrez\\Downloads\\ModuleSegurity Nuevo\\ModuleSecurity\\Bussines\\Interface\\IPersonBusiness.cs",
+              "RelativeToolTip": "Bussines\\Interface\\IPersonBusiness.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-31T03:41:28.013Z",
+              "WhenOpened": "2024-08-31T05:35:55.911Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ViewBusiness.cs",
+              "DocumentMoniker": "C:\\Users\\MariaPaula Gutierrez\\Downloads\\ModuleSegurity Nuevo\\ModuleSecurity\\Bussines\\Implements\\ViewBusiness.cs",
+              "RelativeDocumentMoniker": "Bussines\\Implements\\ViewBusiness.cs",
+              "ToolTip": "C:\\Users\\MariaPaula Gutierrez\\Downloads\\ModuleSegurity Nuevo\\ModuleSecurity\\Bussines\\Implements\\ViewBusiness.cs",
+              "RelativeToolTip": "Bussines\\Implements\\ViewBusiness.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-31T05:35:21.406Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "UserRoleBusiness.cs",
+              "DocumentMoniker": "C:\\Users\\MariaPaula Gutierrez\\Downloads\\ModuleSegurity Nuevo\\ModuleSecurity\\Bussines\\Implements\\UserRoleBusiness.cs",
+              "RelativeDocumentMoniker": "Bussines\\Implements\\UserRoleBusiness.cs",
+              "ToolTip": "C:\\Users\\MariaPaula Gutierrez\\Downloads\\ModuleSegurity Nuevo\\ModuleSecurity\\Bussines\\Implements\\UserRoleBusiness.cs",
+              "RelativeToolTip": "Bussines\\Implements\\UserRoleBusiness.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-31T05:34:59.647Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "UserBusiness.cs",
+              "DocumentMoniker": "C:\\Users\\MariaPaula Gutierrez\\Downloads\\ModuleSegurity Nuevo\\ModuleSecurity\\Bussines\\Implements\\UserBusiness.cs",
+              "RelativeDocumentMoniker": "Bussines\\Implements\\UserBusiness.cs",
+              "ToolTip": "C:\\Users\\MariaPaula Gutierrez\\Downloads\\ModuleSegurity Nuevo\\ModuleSecurity\\Bussines\\Implements\\UserBusiness.cs",
+              "RelativeToolTip": "Bussines\\Implements\\UserBusiness.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-31T05:34:35.667Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "RoleViewBusiness.cs",
+              "DocumentMoniker": "C:\\Users\\MariaPaula Gutierrez\\Downloads\\ModuleSegurity Nuevo\\ModuleSecurity\\Bussines\\Implements\\RoleViewBusiness.cs",
+              "RelativeDocumentMoniker": "Bussines\\Implements\\RoleViewBusiness.cs",
+              "ToolTip": "C:\\Users\\MariaPaula Gutierrez\\Downloads\\ModuleSegurity Nuevo\\ModuleSecurity\\Bussines\\Implements\\RoleViewBusiness.cs",
+              "RelativeToolTip": "Bussines\\Implements\\RoleViewBusiness.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-31T05:34:11.543Z",
               "EditorCaption": ""
             }
           ]

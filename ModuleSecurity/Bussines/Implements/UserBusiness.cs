@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Entity.DTO
+namespace Bussines.Implements
 {
-    public class UserRoleDto
+    internal class UserBusiness
     {
-        public int Id { get; set; }
-        public bool State {  get; set; }
     }
 }

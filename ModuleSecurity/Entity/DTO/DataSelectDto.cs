@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Entity.DTO
 {
-    internal class DataSelectDto
+    public class DataSelectDto
     {
+        public int Id { get; set; }
+        public string TextoMostrar { get; set; }
     }
 }
