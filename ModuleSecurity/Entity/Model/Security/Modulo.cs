@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entity.DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,6 +15,10 @@ namespace Entity.Model.Security
         public DateTime UpdateAt { get; set; }
         public DateTime DeleteAt {  get; set; }
         public bool State {  get; set; }
-        public object Modulo { get; set; }
+
+        public static implicit operator Modulo(ModuloDto v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

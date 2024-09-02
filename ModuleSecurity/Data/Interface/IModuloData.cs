@@ -1,20 +1,17 @@
 ﻿using Entity.DTO;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Entity.Model.Security;
+
 
 namespace Data.Interface
 {
     public interface IModuloData
     {
         Task Delete(int id);
-       
-        Task<IEnumerable<ModuloDto>> GetAll();
+        Task<IEnumerable<Modulo>> GetAll();
         Task<IEnumerable<DataSelectDto>> GetAllSelect();
-        Task<ModuloDto> GetById(int id);
-        Task<ModuloDto> Save(ModuloDto entity);
-        Task<ModuloDto> Update(ModuloDto entity);
+        Task<Modulo> GetById(int id);
+        Task<Modulo> Save(Modulo entity);
+        Task Update(Modulo entity);
+        Task<Modulo> GetByName(string description);
     }
 }

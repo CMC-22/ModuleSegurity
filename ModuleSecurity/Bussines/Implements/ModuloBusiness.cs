@@ -2,6 +2,7 @@
 using Data.Interface;
 using Entity.DTO;
 using Entity.Model.Security;
+using System.Data;
 
 
 namespace Bussines.Implements
@@ -22,7 +23,7 @@ namespace Bussines.Implements
 
         public async Task<IEnumerable<ModuloDto>> GetAll()
         {
-            IEnumerable<Modulo> modulos = await this.data.GetAll();
+            IEnumerable<Modulo> modulos = (IEnumerable<Modulo>)await this.data.GetAll();
             var moduloDtos = modulos.Select(modulo => new ModuloDto
             {
                 Id = modulo.Id,
@@ -48,7 +49,7 @@ namespace Bussines.Implements
             return moduloDto;
         }
 
-        public Modulo mapearDatos(Modulo modulo, ModuloDto entity)
+        public Modulo MapearDatos(Modulo modulo, ModuloDto entity)
         {
             modulo.Id = entity.Id;
             modulo.Description = entity.Description;
@@ -60,19 +61,18 @@ namespace Bussines.Implements
         {
             Modulo modulo = new Modulo();
             modulo.CreateAt = DateTime.Now.AddHours(-5);
-            modulo = this.mapearDatos(modulo, entity);
-            modulo.Modulo = null;
-            return await this.Save(modulo);
+            modulo = this.MapearDatos(modulo, entity);
+            return await this.data.Save(modulo);
         }
 
-        public async  Task Update(ModuloDto entity)
+        public async Task Update(ModuloDto entity)
         {
             Modulo modulo = await this.data.GetById(entity.Id);
             if (modulo == null)
             {
                 throw new Exception("Registro no encontrado");
             }
-            modulo = this.mapearDatos(modulo, entity);
+            modulo = this.MapearDatos(modulo, entity);
             await this.data.Update(modulo);
         }
     }

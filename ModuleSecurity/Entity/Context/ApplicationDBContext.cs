@@ -67,7 +67,7 @@ namespace Entity.Context
 
         //Security
         public DbSet<Role> Roles => Set<Role>();
-        public DbSet<Modulo> Modolos => Set<Modulo>();
+        public DbSet<Modulo> Modulos => Set<Modulo>();
         public DbSet<Person> Persons => Set<Person>();
         public DbSet<RoleView> RoleViews => Set<RoleView>();
         public DbSet<User> Users => Set<User>();
