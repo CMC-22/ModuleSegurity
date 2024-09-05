@@ -73,6 +73,9 @@ namespace Entity.Context
         public DbSet<User> Users => Set<User>();
         public DbSet<UserRole> UseRoles => Set<UserRole>();
         public DbSet<View> Views => Set<View>();
+        public DbSet<City> Citys => Set<City>();
+        public DbSet<Countries> Countries => Set<Countries>();
+        public DbSet<State> States => Set<State>();
     }
 
     public readonly struct DapperEFCoreCommand : IDisposable
