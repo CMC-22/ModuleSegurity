@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Bussines.Implements
 {
-    public class ViewBusiness : IViewBusiness
+    public class ViewBusiness :  IViewBusiness
     {
         protected readonly IViewData data;
 
