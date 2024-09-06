@@ -1,31 +1,34 @@
 using Entity.Context;
 using Microsoft.EntityFrameworkCore;
+using Business.Interface;
+using Business.Implements;
 
 var builder = WebApplication.CreateBuilder(args);
 
-//Confugiura DbContext con MySQL Server
+// Configura DbContext con MySQL Server
 builder.Services.AddDbContext<ApplicationDBContext>(options =>
-options.UseMySQL(builder.Configuration.GetConnectionString("MySqlConnection")));
+    options.UseMySQL(builder.Configuration.GetConnectionString("MySqlConnection")));
 
-// Add services to the container.
-
+// Agrega los servicios al contenedor de servicios
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
+// Configura Swagger/OpenAPI
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// Registro de servicios personalizados
+builder.Services.AddScoped<ICityBusiness, CityBusiness>();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Configura el pipeline de solicitud HTTP
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
- 
-app.UseHttpsRedirection();
 
+app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
