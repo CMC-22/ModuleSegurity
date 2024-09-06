@@ -4,11 +4,6 @@ using Entity.DTO;
 using Entity.Model.Security;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Data.Implements
 {
@@ -31,19 +26,19 @@ namespace Data.Implements
                 throw new Exception("Registro no encontrado");
             }
             entity.DeleteAt = DateTime.Parse(DateTime.Today.ToString());
-            context.Persons.Update(entity);
+            context.Persons.Remove(entity);
             await context.SaveChangesAsync();
         }
 
         public async Task<IEnumerable<DataSelectDto>> GetAllSelect()
         {
-            var sql = @"SELECT Id, CONCAT(Name, '-', Description) AS TextoMostrar FROM Person WHERE DeleteAt IS NULL AND State = 1 ORDER BY Id ASC";
+            var sql = @"SELECT Id, CONCAT(First_name) AS TextoMostrar FROM Persons WHERE DeleteAt IS NULL AND State = 1 ORDER BY Id ASC";
             return await context.QueryAsync<DataSelectDto>(sql);
         }
 
         public async Task<Person> GetById(int id)
         {
-            var sql = @"SELECT * FROM Person WHERE Id = @Id ORDER BY Id ASC";
+            var sql = @"SELECT * FROM Persons WHERE Id = @Id ORDER BY Id ASC";
             return await this.context.QueryFirstOrDefaulAsync<Person>(sql, new { Id = id });
         }
 
@@ -67,7 +62,7 @@ namespace Data.Implements
 
         public async Task<IEnumerable<Person>> GetAll()
         {
-            var sql = @"SELECT * FROM Person Order BY Id ASC";
+            var sql = @"SELECT * FROM Persons Order BY Id ASC";
             return await this.context.QueryAsync<Person>(sql);
         }
     }

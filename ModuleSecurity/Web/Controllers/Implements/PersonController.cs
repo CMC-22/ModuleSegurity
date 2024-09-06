@@ -23,11 +23,6 @@ namespace Web.Controllers.Implements
             return Ok(result);
         }
 
-        private ActionResult<IEnumerable<PersonDto>> Ok(IEnumerable<PersonDto> result)
-        {
-            throw new NotImplementedException();
-        }
-
         [HttpGet("{id}")]
         public async Task<ActionResult<PersonDto>> GetById(int id)
         {

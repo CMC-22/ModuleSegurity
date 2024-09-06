@@ -31,19 +31,19 @@ namespace Data.Implements
                 throw new Exception("Registor no encontrado");
             }
             entity.DeleteAt = DateTime.Parse(DateTime.Today.ToString());
-            context.UseRoles.Update(entity);
+            context.UseRoles.Remove(entity);
             await context.SaveChangesAsync();
         }
 
         public async Task<IEnumerable<DataSelectDto>> GetAllSelect()
         {
-            var sql = @"SELECT Id, CONCAT(Name, '-', Description) AS TextoMostrar FROM UserRole WHERE DeleteAt IS NULL AND State = 1 ORDER BY Id ASC";
+            var sql = @"SELECT Id, CONCAT(Name, '-', Description) AS TextoMostrar FROM UserRoles WHERE DeleteAt IS NULL AND State = 1 ORDER BY Id ASC";
             return await context.QueryAsync<DataSelectDto>(sql);
         }
 
         public async Task<UserRole> GetById(int id)
         {
-            var sql = @"SELECT * FROM UserRole WHERE Id = @Id ORDER BY Id ASC";
+            var sql = @"SELECT * FROM UserRoles WHERE Id = @Id ORDER BY Id ASC";
             return await this.context.QueryFirstOrDefaulAsync<UserRole>(sql, new { Id = id });
         }
 
@@ -67,7 +67,7 @@ namespace Data.Implements
 
         public async Task<IEnumerable<UserRole>> GetAll()
         {
-            var sql = @"SELECT * FROM UserRole Order BY Id ASC";
+            var sql = @"SELECT * FROM UserRoles Order BY Id ASC";
             return await this.context.QueryAsync<UserRole>(sql);
         }
     }

@@ -1,11 +1,10 @@
-﻿using Bussines.Interface;
+﻿
+using Bussines.Interface;
 using Data.Interface;
 using Entity.DTO;
 using Entity.Model.Security;
-using System.Data;
 
-
-namespace Bussines.Implements
+namespace Business.Implements
 {
     public class ModuloBusiness : IModuloBusiness
     {
@@ -23,7 +22,7 @@ namespace Bussines.Implements
 
         public async Task<IEnumerable<ModuloDto>> GetAll()
         {
-            IEnumerable<Modulo> modulos = (IEnumerable<Modulo>)await this.data.GetAll();
+            IEnumerable<Modulo> modulos = await this.data.GetAll();
             var moduloDtos = modulos.Select(modulo => new ModuloDto
             {
                 Id = modulo.Id,
@@ -45,7 +44,7 @@ namespace Bussines.Implements
 
             moduloDto.Id = modulo.Id;
             moduloDto.Description = modulo.Description;
-            modulo.State = modulo.State;
+            moduloDto.State = modulo.State;
             return moduloDto;
         }
 
@@ -63,6 +62,7 @@ namespace Bussines.Implements
             modulo.CreateAt = DateTime.Now.AddHours(-5);
             modulo = this.MapearDatos(modulo, entity);
             return await this.data.Save(modulo);
+
         }
 
         public async Task Update(ModuloDto entity)
@@ -77,3 +77,4 @@ namespace Bussines.Implements
         }
     }
 }
+

@@ -27,19 +27,19 @@ namespace Data.Implements
                 throw new Exception("Registor no encontrado");
             }
             entity.DeleteAt = DateTime.Parse(DateTime.Today.ToString());
-            context.Modulos.Update(entity);
+            context.Modulos.Remove(entity);
             await context.SaveChangesAsync();
         }
 
         public async Task<IEnumerable<DataSelectDto>> GetAllSelect()
         {
-            var sql = @"SELECT Id, CONCAT(Name, '-', Description) AS TextoMostrar FROM Modulo WHERE DeleteAt IS NULL AND State = 1 ORDER BY Id ASC";
+            var sql = @"SELECT Id, CONCAT(Name, '-', Description) AS TextoMostrar FROM Modulos WHERE DeleteAt IS NULL AND State = 1 ORDER BY Id ASC";
             return await context.QueryAsync<DataSelectDto>(sql);
         }
 
         public async Task<Modulo> GetById(int id)
         {
-            var sql = @"SELECT * FROM Modulo WHERE Id = @Id ORDER BY Id ASC";
+            var sql = @"SELECT * FROM Modulos WHERE Id = @Id ORDER BY Id ASC";
             return await this.context.QueryFirstOrDefaulAsync<Modulo>(sql, new { Id = id });
         }
 
@@ -63,7 +63,7 @@ namespace Data.Implements
 
         public async Task<IEnumerable<Modulo>> GetAll()
         {
-            var sql = @"SELECT * FROM Modulo Order BY Id ASC";
+            var sql = @"SELECT * FROM Modulos Order BY Id ASC";
             return await this.context.QueryAsync<Modulo>(sql);
         }
     }
