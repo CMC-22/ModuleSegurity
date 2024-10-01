@@ -5,3 +5,10 @@ C:\Users\MariaPaula Gutierrez\Downloads\ModuleSegurity Nuevo\ModuleSecurity\Diag
 C:\Users\MariaPaula Gutierrez\Downloads\ModuleSegurity Nuevo\ModuleSecurity\Diagram\obj\Debug\Diagram.csproj.CoreCompileInputs.cache
 C:\Users\MariaPaula Gutierrez\Downloads\ModuleSegurity Nuevo\ModuleSecurity\Diagram\obj\Debug\Diagram.dll
 C:\Users\MariaPaula Gutierrez\Downloads\ModuleSegurity Nuevo\ModuleSecurity\Diagram\obj\Debug\Diagram.pdb
+C:\Users\Carolina\Downloads\ModuleSegurity\ModuleSecurity\Diagram\bin\Debug\Diagram.dll.config
+C:\Users\Carolina\Downloads\ModuleSegurity\ModuleSecurity\Diagram\bin\Debug\Diagram.dll
+C:\Users\Carolina\Downloads\ModuleSegurity\ModuleSecurity\Diagram\bin\Debug\Diagram.pdb
+C:\Users\Carolina\Downloads\ModuleSegurity\ModuleSecurity\Diagram\obj\Debug\Diagram.csproj.AssemblyReference.cache
+C:\Users\Carolina\Downloads\ModuleSegurity\ModuleSecurity\Diagram\obj\Debug\Diagram.csproj.CoreCompileInputs.cache
+C:\Users\Carolina\Downloads\ModuleSegurity\ModuleSecurity\Diagram\obj\Debug\Diagram.dll
+C:\Users\Carolina\Downloads\ModuleSegurity\ModuleSecurity\Diagram\obj\Debug\Diagram.pdb

@@ -12,6 +12,7 @@ namespace Entity.DTO
         public string Name { get; set; }
         public string Description { get; set; }
         public bool State {  get; set; }
+        public int ModuloId { get; set; }//propiedad de la tabla modulo
 
     }
 }

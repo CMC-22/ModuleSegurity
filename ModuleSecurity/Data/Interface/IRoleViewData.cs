@@ -10,8 +10,8 @@ namespace Data.Interface
 {
     public interface IRoleViewData
     {
-        Task Delete(int id);
-        Task<IEnumerable<RoleView>> GetAll();
+        Task Delete(int id, bool isSoftDelete = true);
+        Task<IEnumerable<RoleViewDto>> GetAll();
         Task<IEnumerable<DataSelectDto>> GetAllSelect();
         Task<RoleView> GetById(int id);
         Task<RoleView> Save(RoleView entity);

@@ -6,8 +6,8 @@ namespace Data.Interface
 {
     public interface IUserRoleData
     {
-        Task Delete(int id);
-        Task<IEnumerable<UserRole>> GetAll();
+        Task Delete(int id, bool isSoftDelete = true);
+        Task<IEnumerable<UserRoleDto>> GetAll();
         Task<IEnumerable<DataSelectDto>> GetAllSelect();
         Task<UserRole> GetById(int id);
         Task<UserRole> Save(UserRole userRole);

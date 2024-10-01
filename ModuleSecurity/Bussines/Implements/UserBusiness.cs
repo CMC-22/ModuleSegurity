@@ -23,13 +23,15 @@ namespace Bussines.Implements
 
         public async Task<IEnumerable<UserDto>> GetAll()
         {
-            IEnumerable<User> users = await this.data.GetAll();
+            IEnumerable<User> users = (IEnumerable<User>)await this.data.GetAll();
             var userDtos = users.Select(user => new UserDto
             {
                 Id = user.Id,
                 Username = user.Username,
                 Password = user.Password,
-                State = user.State
+                State = user.State,
+                PersonId = user.PersonId,
+                PersonName = user.Person?.First_name,
             });
             return userDtos;
         }
@@ -48,6 +50,7 @@ namespace Bussines.Implements
             userDto.Username = user.Username;
             userDto.Password = user.Password;
             userDto.State = user.State;
+            userDto.PersonId = user.PersonId;
 
             return userDto;
         }
@@ -58,6 +61,7 @@ namespace Bussines.Implements
             user.Username = entity.Username;
             user.Password = entity.Password;
             user.State = entity.State;
+            user.PersonId = entity.PersonId;
             return user;
         }
 

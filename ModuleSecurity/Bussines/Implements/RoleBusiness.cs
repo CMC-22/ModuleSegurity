@@ -22,7 +22,7 @@ namespace Bussines.Implements
 
         public async Task<IEnumerable<RoleDto>> GetAll()
         {
-            IEnumerable<Role> roles = await this.data.GetAll();
+            IEnumerable<Role> roles = (IEnumerable<Role>) await this.data.GetAll();
             var roleDtos = roles.Select(role => new RoleDto
             {
                 Id = role.Id,

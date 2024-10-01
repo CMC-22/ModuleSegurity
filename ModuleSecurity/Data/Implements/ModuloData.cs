@@ -19,15 +19,24 @@ namespace Data.Implements
             this.configuration = configuration;
         }
 
-        public async Task Delete(int id)
+        public async Task Delete(int id, bool isSoftDelete = true)
         {
             var entity = await GetById(id);
             if (entity == null)
             {
-                throw new Exception("Registor no encontrado");
+                throw new Exception("Registro no encontrado");
             }
-            entity.DeleteAt = DateTime.Parse(DateTime.Today.ToString());
-            context.Modulos.Update(entity);
+            if (isSoftDelete)
+            {
+                //Eliminación lógica
+                entity.DeleteAt = DateTime.Now;
+                context.Modulos.Update(entity);
+            }
+            else
+            {
+                context.Modulos.Remove(entity);
+            }
+
             await context.SaveChangesAsync();
         }
 
@@ -61,10 +70,10 @@ namespace Data.Implements
             return await this.context.Modulos.AsNoTracking().Where(item => item.Description == description).FirstOrDefaultAsync();
         }
 
-        public async Task<IEnumerable<Modulo>> GetAll()
+        public async Task<IEnumerable<ModuloDto>> GetAll()
         {
             var sql = @"SELECT * FROM Modulo Order BY Id ASC";
-            return await this.context.QueryAsync<Modulo>(sql);
+            return await this.context.QueryAsync<ModuloDto>(sql);
         }
     }
 }

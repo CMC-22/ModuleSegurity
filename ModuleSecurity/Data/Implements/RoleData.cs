@@ -23,27 +23,36 @@ namespace Data.Implements
             this.configuration = configuration;
         }
 
-        public async Task Delete(int id)
+        public async Task Delete(int id, bool isSoftDelete = true)
         {
             var entity = await GetById(id);
             if (entity == null)
             {
-                throw new Exception("Registor no encontrado");
+                throw new Exception("Registro no encontrado");
             }
-            entity.DeleteAt = DateTime.Parse(DateTime.Today.ToString());
-            context.Roles.Update(entity);
+            if (isSoftDelete)
+            {
+                //Eliminación lógica
+                entity.DeleteAt = DateTime.Now;
+                context.Roles.Update(entity);
+            }
+            else
+            {
+                context.Roles.Remove(entity);
+            }
+
             await context.SaveChangesAsync();
         }
 
         public async Task<IEnumerable<DataSelectDto>> GetAllSelect()
         {
-            var sql = @"SELECT Id, CONCAT(Name, '-', Description) AS TextoMostrar FROM Role WHERE DeleteAt IS NULL AND State = 1 ORDER BY Id ASC";
+            var sql = @"SELECT Id, CONCAT(Name, '-', Description) AS TextoMostrar FROM Role WHERE DeleteAt IS NULL ORDER BY Id ASC";
             return await context.QueryAsync<DataSelectDto>(sql);
         }
 
         public async Task<Role> GetById(int id)
         {
-            var sql = @"SELECT * FROM Role WHERE Id = @Id ORDER BY Id ASC";
+            var sql = @"SELECT * FROM Role WHERE Id = @Id AND DeleteAt IS NULL ORDER BY Id ASC";
             return await this.context.QueryFirstOrDefaulAsync<Role>(sql, new {Id = id});
         }
 
@@ -65,10 +74,10 @@ namespace Data.Implements
             return await this.context.Roles.AsNoTracking().Where(item => item.Name == name).FirstOrDefaultAsync();
         }
 
-        public async Task<IEnumerable<Role>> GetAll()
+        public async Task<IEnumerable<RoleDto>> GetAll()
         {
             var sql = @"SELECT * FROM Role Order BY Id ASC";
-            return await this.context.QueryAsync<Role>(sql);
+            return await this.context.QueryAsync<RoleDto>(sql);
         }
     }
 }

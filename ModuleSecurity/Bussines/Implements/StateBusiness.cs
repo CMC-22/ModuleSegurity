@@ -2,11 +2,7 @@
 using Data.Interface;
 using Entity.DTO;
 using Entity.Model.Security;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Business.Implements
 {
@@ -31,6 +27,8 @@ namespace Business.Implements
             {
                 Id = state.Id,
                 Name = state.Name,
+                CountriesId = state.CountriesId,
+                CountriesName = state.Countries?.Name
             });
             return stateDtos;
         }
@@ -47,6 +45,7 @@ namespace Business.Implements
 
             stateDto.Id = state.Id;
             stateDto.Name = state.Name;
+            stateDto.CountriesId = state.CountriesId;
             return stateDto;
         }
 
@@ -54,13 +53,16 @@ namespace Business.Implements
         {
             state.Id = entity.Id;
             state.Name = entity.Name;
+            state.CountriesId = entity.CountriesId;
             return state;
         }
 
         public async Task<State> Save(StateDto entity)
         {
-            State state = new State();
-            state.CreateAt = DateTime.Now.AddHours(-5);
+            State state = new State
+            {
+                CreateAt = DateTime.Now.AddHours(-5)
+            };
             state = this.MapearDatos(state, entity);
             return await this.data.Save(state);
         }

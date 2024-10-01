@@ -23,27 +23,36 @@ namespace Data.Implements
             this.configuration = configuration;
         }
 
-        public async Task Delete(int id)
+        public async Task Delete(int id, bool isSoftDelete = true)
         {
             var entity = await GetById(id);
             if (entity == null)
             {
-                throw new Exception("Registor no encontrado");
+                throw new Exception("Registro no encontrado");
             }
-            entity.DeleteAt = DateTime.Parse(DateTime.Today.ToString());
-            context.UseRoles.Update(entity);
+            if (isSoftDelete)
+            {
+                //Eliminación lógica
+                entity.DeleteAt = DateTime.Now;
+                context.UseRoles.Update(entity);
+            }
+            else
+            {
+                context.UseRoles.Remove(entity);
+            }
+
             await context.SaveChangesAsync();
         }
 
         public async Task<IEnumerable<DataSelectDto>> GetAllSelect()
         {
-            var sql = @"SELECT Id, CONCAT(Name, '-', Description) AS TextoMostrar FROM UserRole WHERE DeleteAt IS NULL AND State = 1 ORDER BY Id ASC";
+            var sql = @"SELECT Id, CONCAT(Name, '-', Description) AS TextoMostrar FROM UserRole WHERE DeleteAt IS NULL ORDER BY Id ASC";
             return await context.QueryAsync<DataSelectDto>(sql);
         }
 
         public async Task<UserRole> GetById(int id)
         {
-            var sql = @"SELECT * FROM UserRole WHERE Id = @Id ORDER BY Id ASC";
+            var sql = @"SELECT * FROM UserRole WHERE Id = @Id AND DeleteAt IS NULL ORDER BY Id ASC";
             return await this.context.QueryFirstOrDefaulAsync<UserRole>(sql, new { Id = id });
         }
 
@@ -65,10 +74,13 @@ namespace Data.Implements
             return await this.context.UseRoles.AsNoTracking().Where(item => item.Id == id).FirstOrDefaultAsync();
         }
 
-        public async Task<IEnumerable<UserRole>> GetAll()
+        public async Task<IEnumerable<UserRoleDto>> GetAll()
         {
-            var sql = @"SELECT * FROM UserRole Order BY Id ASC";
-            return await this.context.QueryAsync<UserRole>(sql);
+            var sql = @"SELECT ur.*, u.Name AS UserName, r.Name AS RoleName
+                        FROM userRoles ur INNER JOIN users u ON ur.UserId = u.Id
+                                          INNER JOIN roles r ON ur.RoleId = r.Id   Order BY Id ASC";
+            var userRoles = await this.context.QueryAsync<UserRoleDto>(sql);
+            return userRoles;
         }
     }
 }

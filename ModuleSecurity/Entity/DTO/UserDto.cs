@@ -13,5 +13,8 @@ namespace Entity.DTO
         public string Password { get; set; }
         public bool State {  get; set; }
 
+        public int PersonId { get; set; } //propiedad de la tabla de person
+        public string ? PersonName { get; set; }
+
     }
 }

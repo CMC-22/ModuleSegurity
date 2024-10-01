@@ -23,7 +23,7 @@ namespace Bussines.Implements
 
             public async Task<IEnumerable<PersonDto>> GetAll()
             {
-                IEnumerable<Person> persons = await this.data.GetAll();
+                IEnumerable<Person> persons = (IEnumerable<Person>) await this.data.GetAll();
                 var personDtos = persons.Select(person => new PersonDto
                 {
                     Id = person.Id,
@@ -35,7 +35,8 @@ namespace Bussines.Implements
                     Document = person.Document,
                     Birth_of_date = person.Birth_of_date,
                     Phone = person.Phone,
-                    State = person.State
+                    CityId = person.CityId,
+                    CityName = person.City?.Name
                 });
                 return personDtos;
             }
@@ -49,7 +50,6 @@ namespace Bussines.Implements
             {
                 Person person = await this.data.GetById(id);
                 PersonDto personDto = new PersonDto();
-
                 personDto.Id = person.Id;
                 personDto.First_name = person.First_name;
                 personDto.Last_name = person.Last_name;
@@ -59,7 +59,7 @@ namespace Bussines.Implements
                 personDto.Document = person.Document;
                 personDto.Birth_of_date = person.Birth_of_date;
                 personDto.Phone = person.Phone;
-                person.State = person.State;
+                personDto.CityId = person.CityId;
                 return personDto;
             }
 
@@ -74,14 +74,16 @@ namespace Bussines.Implements
                 person.Document = entity.Document;
                 person.Birth_of_date = entity.Birth_of_date;
                 person.Phone = entity.Phone;
-                person.State = entity.State;
+                person.CityId = entity.CityId;
                 return person;
             }
 
         public async Task<Person> Save(PersonDto entity)
         {
-            Person person = new Person();
-            person.CreateAt = DateTime.Now.AddHours(-5);
+            Person person = new Person
+            {
+                CreateAt = DateTime.Now.AddHours(-5)
+            };
             person = this.MapearDatos(person, entity);
             return await this.data.Save(person);
 

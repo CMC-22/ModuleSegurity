@@ -4,11 +4,6 @@ using Entity.DTO;
 using Entity.Model.Security;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Data.Implements
 {
@@ -23,27 +18,36 @@ namespace Data.Implements
             this.configuration = configuration;
         }
 
-        public async Task Delete(int id)
+        public async Task Delete(int id, bool isSoftDelete = true)
         {
             var entity = await GetById(id);
             if (entity == null)
             {
                 throw new Exception("Registro no encontrado");
             }
-            entity.DeleteAt = DateTime.Parse(DateTime.Today.ToString());
-            context.RoleViews.Update(entity);
+            if (isSoftDelete)
+            {
+                //Eliminación lógica
+                entity.DeleteAt = DateTime.Now;
+                context.RoleViews.Update(entity);
+            }
+            else
+            {
+                context.RoleViews.Remove(entity);
+            }
+
             await context.SaveChangesAsync();
         }
 
         public async Task<IEnumerable<DataSelectDto>> GetAllSelect()
         {
-            var sql = @"SELECT Id, CONCAT(Name, '-', Description) AS TextoMostrar FROM RoleView WHERE DeleteAt IS NULL AND State = 1 ORDER BY Id ASC";
+            var sql = @"SELECT Id, CONCAT(Name, '-', Description) AS TextoMostrar FROM RoleView WHERE DeleteAt IS NULL ORDER BY Id ASC";
             return await context.QueryAsync<DataSelectDto>(sql);
         }
 
         public async Task<RoleView> GetById(int id)
         {
-            var sql = @"SELECT * FROM RoleView WHERE Id = @Id ORDER BY Id ASC";
+            var sql = @"SELECT * FROM RoleView WHERE Id = @Id AND DeleteAt IS NULL ORDER BY Id ASC";
             return await this.context.QueryFirstOrDefaulAsync<RoleView>(sql, new { Id = id });
         }
 
@@ -65,10 +69,12 @@ namespace Data.Implements
             return await this.context.RoleViews.AsNoTracking().Where(item => item.Id == id).FirstOrDefaultAsync();
         }
 
-        public async Task<IEnumerable<RoleView>> GetAll()
+        public async Task<IEnumerable<RoleViewDto>> GetAll()
         {
-            var sql = @"SELECT * FROM RoleView Order BY Id ASC";
-            return await this.context.QueryAsync<RoleView>(sql);
+            var sql = @"SELECT rv.*, v.Name AS ViewName, r.Name AS RoleName
+                        FROM roleviews rv INNER JOIN v ON rv.ViewId = v.Id
+                                          INNER JOIN r ON rv.RoleId = r.Id Order BY Id ASC";
+            return await this.context.QueryAsync<RoleViewDto>(sql);
         }
     }
 }

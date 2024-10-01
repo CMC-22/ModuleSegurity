@@ -13,14 +13,14 @@
         <EntityTypeShape EntityType="DBModel.View" Width="1.5" PointX="12.75" PointY="1.125" />
         <EntityTypeShape EntityType="DBModel.Modulo" Width="1.5" PointX="15.25" PointY="1.125" />
         <AssociationConnector Association="DBModel.PersonUser" />
-        <AssociationConnector Association="DBModel.UserUserRole" />
         <AssociationConnector Association="DBModel.UserRoleRole" />
-        <AssociationConnector Association="DBModel.RoleRoleView" />
         <AssociationConnector Association="DBModel.RoleViewView" />
         <AssociationConnector Association="DBModel.ViewModulo" />
-        <EntityTypeShape EntityType="DBModel.City" Width="1.5" PointX="4" PointY="4.625" />
+        <EntityTypeShape EntityType="DBModel.City" PointX="3.75" PointY="4.75" Width="1.5" />
         <EntityTypeShape EntityType="DBModel.Countries" Width="1.5" PointX="8.875" PointY="4.75" />
         <EntityTypeShape EntityType="DBModel.State" Width="1.5" PointX="6.5" PointY="4.625" />
+        <AssociationConnector Association="DBModel.UserUserRole" />
+        <AssociationConnector Association="DBModel.RoleRoleView" />
         <AssociationConnector Association="DBModel.CityPerson" />
         <AssociationConnector Association="DBModel.StateCity" />
         <AssociationConnector Association="DBModel.CountriesState" />

@@ -3644,19 +3644,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\MariaPaula Gutierrez\\.nuget\\packages\\": {}
+    "C:\\Users\\Carolina\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\MariaPaula Gutierrez\\Downloads\\ModuleSegurity Nuevo\\ModuleSecurity\\Bussines\\Business.csproj",
+      "projectUniqueName": "C:\\Users\\Carolina\\Downloads\\ModuleSegurity\\ModuleSecurity\\Bussines\\Business.csproj",
       "projectName": "Business",
-      "projectPath": "C:\\Users\\MariaPaula Gutierrez\\Downloads\\ModuleSegurity Nuevo\\ModuleSecurity\\Bussines\\Business.csproj",
-      "packagesPath": "C:\\Users\\MariaPaula Gutierrez\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\MariaPaula Gutierrez\\Downloads\\ModuleSegurity Nuevo\\ModuleSecurity\\Bussines\\obj\\",
+      "projectPath": "C:\\Users\\Carolina\\Downloads\\ModuleSegurity\\ModuleSecurity\\Bussines\\Business.csproj",
+      "packagesPath": "C:\\Users\\Carolina\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Carolina\\Downloads\\ModuleSegurity\\ModuleSecurity\\Bussines\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\MariaPaula Gutierrez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Carolina\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3671,11 +3671,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\MariaPaula Gutierrez\\Downloads\\ModuleSegurity Nuevo\\ModuleSecurity\\Data\\Data.csproj": {
-              "projectPath": "C:\\Users\\MariaPaula Gutierrez\\Downloads\\ModuleSegurity Nuevo\\ModuleSecurity\\Data\\Data.csproj"
+            "C:\\Users\\Carolina\\Downloads\\ModuleSegurity\\ModuleSecurity\\Data\\Data.csproj": {
+              "projectPath": "C:\\Users\\Carolina\\Downloads\\ModuleSegurity\\ModuleSecurity\\Data\\Data.csproj"
             },
-            "C:\\Users\\MariaPaula Gutierrez\\Downloads\\ModuleSegurity Nuevo\\ModuleSecurity\\Entity\\Entity.csproj": {
-              "projectPath": "C:\\Users\\MariaPaula Gutierrez\\Downloads\\ModuleSegurity Nuevo\\ModuleSecurity\\Entity\\Entity.csproj"
+            "C:\\Users\\Carolina\\Downloads\\ModuleSegurity\\ModuleSecurity\\Entity\\Entity.csproj": {
+              "projectPath": "C:\\Users\\Carolina\\Downloads\\ModuleSegurity\\ModuleSecurity\\Entity\\Entity.csproj"
             }
           }
         }
@@ -3710,7 +3710,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

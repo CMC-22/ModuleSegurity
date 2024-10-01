@@ -1,7 +1,9 @@
 ﻿using Business.Interface;
+using Data.Implements;
 using Data.Interface;
 using Entity.DTO;
 using Entity.Model.Security;
+using Google.Protobuf.Compiler;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,6 +34,8 @@ namespace Business.Implements
                 Id = city.Id,
                 Name = city.Name,
                 Postalcode = city.Postalcode,
+                StateId = city.StateId,
+                StateName = city.State?.Name
             });
             return cityDtos;
         }
@@ -49,6 +53,7 @@ namespace Business.Implements
             cityDto.Id = city.Id;
             cityDto.Name = city.Name;
             cityDto.Postalcode = city.Postalcode;
+            cityDto.StateId = city.StateId;
             return cityDto;
         }
 
@@ -57,6 +62,7 @@ namespace Business.Implements
             city.Id = entity.Id;
             city.Name = entity.Name;
             city.Postalcode= entity.Postalcode;
+            city.StateId = entity.StateId;
             return city;
         }
 

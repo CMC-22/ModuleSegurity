@@ -11,5 +11,8 @@ namespace Entity.DTO
         public int Id { get; set; }
         public string Name { get; set; }
         public int Postalcode { get; set; }
+
+        public int StateId { get; set; }
+        public string ? StateName { get; set; } //propiedad de la tabla city
     }
 }

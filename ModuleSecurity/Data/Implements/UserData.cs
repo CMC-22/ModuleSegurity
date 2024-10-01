@@ -23,27 +23,36 @@ namespace Data.Implements
             this.configuration = configuration;
         }
 
-        public async Task Delete(int id)
+        public async Task Delete(int id, bool isSoftDelete = true)
         {
             var entity = await GetById(id);
             if (entity == null)
             {
                 throw new Exception("Registro no encontrado");
             }
-            entity.DeleteAt = DateTime.Parse(DateTime.Today.ToString());
-            context.Users.Update(entity);
+            if (isSoftDelete)
+            {
+                //Eliminación lógica
+                entity.DeleteAt = DateTime.Now;
+                context.Users.Update(entity);
+            }
+            else
+            {
+                context.Users.Remove(entity);
+            }
+
             await context.SaveChangesAsync();
         }
 
         public async Task<IEnumerable<DataSelectDto>> GetAllSelect()
         {
-            var sql = @"SELECT Id, CONCAT(Name, '-', Description) AS TextoMostrar FROM User WHERE DeleteAt IS NULL AND State = 1 ORDER BY Id ASC";
+            var sql = @"SELECT Id, CONCAT(Name, '-', Description) AS TextoMostrar FROM User WHERE DeleteAt IS NULL ORDER BY Id ASC";
             return await context.QueryAsync<DataSelectDto>(sql);
         }
 
         public async Task<User> GetById(int id)
         {
-            var sql = @"SELECT * FROM User WHERE Id = @Id ORDER BY Id ASC";
+            var sql = @"SELECT * FROM User WHERE Id = @Id AND DeleteAt IS NULL ORDER BY Id ASC";
             return await this.context.QueryFirstOrDefaulAsync<User>(sql, new { Id = id });
         }
 
@@ -65,10 +74,11 @@ namespace Data.Implements
             return await this.context.Users.AsNoTracking().Where(item => item.Username == username).FirstOrDefaultAsync();
         }
 
-        public async Task<IEnumerable<User>> GetAll()
+        public async Task<IEnumerable<UserDto>> GetAll()
         {
-            var sql = @"SELECT * FROM User Order BY Id ASC";
-            return await this.context.QueryAsync<User>(sql);
+            var sql = @"SELECT u.*, p.Name AS PersonName FROM users p INNER JOIN persons p ON u.PersonId = p.Id Order BY Id ASC";
+            var users = await this.context.QueryAsync<UserDto>(sql);
+            return users;
         }
     }
 }

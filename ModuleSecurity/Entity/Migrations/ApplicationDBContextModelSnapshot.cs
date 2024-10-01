@@ -28,7 +28,7 @@ namespace Entity.Migrations
                     b.Property<DateTime>("CreateAt")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<DateTime>("DeleteAt")
+                    b.Property<DateTime?>("DeleteAt")
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("Name")
@@ -38,10 +38,15 @@ namespace Entity.Migrations
                     b.Property<int>("Postalcode")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("UpdateAt")
+                    b.Property<int>("StateId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("UpdateAt")
                         .HasColumnType("datetime(6)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("StateId");
 
                     b.ToTable("Citys");
                 });
@@ -55,14 +60,14 @@ namespace Entity.Migrations
                     b.Property<DateTime>("CreateAt")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<DateTime>("DeleteAt")
+                    b.Property<DateTime?>("DeleteAt")
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<DateTime>("UpdateAt")
+                    b.Property<DateTime?>("UpdateAt")
                         .HasColumnType("datetime(6)");
 
                     b.HasKey("Id");
@@ -76,10 +81,10 @@ namespace Entity.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("CreateAt")
+                    b.Property<DateTime?>("CreateAt")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<DateTime>("DeleteAt")
+                    b.Property<DateTime?>("DeleteAt")
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("Description")
@@ -89,7 +94,7 @@ namespace Entity.Migrations
                     b.Property<bool>("State")
                         .HasColumnType("tinyint(1)");
 
-                    b.Property<DateTime>("UpdateAt")
+                    b.Property<DateTime?>("UpdateAt")
                         .HasColumnType("datetime(6)");
 
                     b.HasKey("Id");
@@ -110,10 +115,13 @@ namespace Entity.Migrations
                     b.Property<DateTime>("Birth_of_date")
                         .HasColumnType("datetime(6)");
 
+                    b.Property<int>("CityId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("CreateAt")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<DateTime>("DeleteAt")
+                    b.Property<DateTime?>("DeleteAt")
                         .HasColumnType("datetime(6)");
 
                     b.Property<int>("Document")
@@ -141,10 +149,12 @@ namespace Entity.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<DateTime>("UpdateAt")
+                    b.Property<DateTime?>("UpdateAt")
                         .HasColumnType("datetime(6)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CityId");
 
                     b.ToTable("Persons");
                 });
@@ -158,7 +168,7 @@ namespace Entity.Migrations
                     b.Property<DateTime>("CreateAt")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<DateTime>("DeleteAt")
+                    b.Property<DateTime?>("DeleteAt")
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("Description")
@@ -172,7 +182,7 @@ namespace Entity.Migrations
                     b.Property<bool>("State")
                         .HasColumnType("tinyint(1)");
 
-                    b.Property<DateTime>("UpdateAt")
+                    b.Property<DateTime?>("UpdateAt")
                         .HasColumnType("datetime(6)");
 
                     b.HasKey("Id");
@@ -189,7 +199,7 @@ namespace Entity.Migrations
                     b.Property<DateTime>("CreateAt")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<DateTime>("DeleteAt")
+                    b.Property<DateTime?>("DeleteAt")
                         .HasColumnType("datetime(6)");
 
                     b.Property<int>("RoleId")
@@ -198,13 +208,17 @@ namespace Entity.Migrations
                     b.Property<bool>("State")
                         .HasColumnType("tinyint(1)");
 
-                    b.Property<DateTime>("UpdateAt")
+                    b.Property<DateTime?>("UpdateAt")
                         .HasColumnType("datetime(6)");
 
                     b.Property<int>("ViewId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("RoleId");
+
+                    b.HasIndex("ViewId");
 
                     b.ToTable("RoleViews");
                 });
@@ -215,20 +229,25 @@ namespace Entity.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    b.Property<int>("CountriesId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("CreateAt")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<DateTime>("DeleteAt")
+                    b.Property<DateTime?>("DeleteAt")
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<DateTime>("UpdateAt")
+                    b.Property<DateTime?>("UpdateAt")
                         .HasColumnType("datetime(6)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CountriesId");
 
                     b.ToTable("States");
                 });
@@ -242,7 +261,7 @@ namespace Entity.Migrations
                     b.Property<DateTime>("CreateAt")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<DateTime>("DeleteAt")
+                    b.Property<DateTime?>("DeleteAt")
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("Password")
@@ -255,17 +274,16 @@ namespace Entity.Migrations
                     b.Property<bool>("State")
                         .HasColumnType("tinyint(1)");
 
-                    b.Property<DateTime>("Update")
+                    b.Property<DateTime?>("Update")
                         .HasColumnType("datetime(6)");
-
-                    b.Property<int>("UserRoleId")
-                        .HasColumnType("int");
 
                     b.Property<string>("Username")
                         .IsRequired()
                         .HasColumnType("longtext");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("PersonId");
 
                     b.ToTable("Users");
                 });
@@ -279,7 +297,7 @@ namespace Entity.Migrations
                     b.Property<DateTime>("CreateAt")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<DateTime>("DeleteAt")
+                    b.Property<DateTime?>("DeleteAt")
                         .HasColumnType("datetime(6)");
 
                     b.Property<int>("RoleId")
@@ -288,13 +306,17 @@ namespace Entity.Migrations
                     b.Property<bool>("State")
                         .HasColumnType("tinyint(1)");
 
-                    b.Property<DateTime>("UpdateAt")
+                    b.Property<DateTime?>("UpdateAt")
                         .HasColumnType("datetime(6)");
 
                     b.Property<int>("UserId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("RoleId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("UseRoles");
                 });
@@ -308,7 +330,7 @@ namespace Entity.Migrations
                     b.Property<DateTime>("CreateAt")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<DateTime>("DeleteAt")
+                    b.Property<DateTime?>("DeleteAt")
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("Description")
@@ -325,12 +347,107 @@ namespace Entity.Migrations
                     b.Property<bool>("State")
                         .HasColumnType("tinyint(1)");
 
-                    b.Property<DateTime>("UpdateAt")
+                    b.Property<DateTime?>("UpdateAt")
                         .HasColumnType("datetime(6)");
 
                     b.HasKey("Id");
 
+                    b.HasIndex("ModuloId");
+
                     b.ToTable("Views");
+                });
+
+            modelBuilder.Entity("Entity.Model.Security.City", b =>
+                {
+                    b.HasOne("Entity.Model.Security.State", "State")
+                        .WithMany()
+                        .HasForeignKey("StateId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("State");
+                });
+
+            modelBuilder.Entity("Entity.Model.Security.Person", b =>
+                {
+                    b.HasOne("Entity.Model.Security.City", "City")
+                        .WithMany()
+                        .HasForeignKey("CityId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("City");
+                });
+
+            modelBuilder.Entity("Entity.Model.Security.RoleView", b =>
+                {
+                    b.HasOne("Entity.Model.Security.Role", "Role")
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Entity.Model.Security.View", "View")
+                        .WithMany()
+                        .HasForeignKey("ViewId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Role");
+
+                    b.Navigation("View");
+                });
+
+            modelBuilder.Entity("Entity.Model.Security.State", b =>
+                {
+                    b.HasOne("Entity.Model.Security.Countries", "Countries")
+                        .WithMany()
+                        .HasForeignKey("CountriesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Countries");
+                });
+
+            modelBuilder.Entity("Entity.Model.Security.User", b =>
+                {
+                    b.HasOne("Entity.Model.Security.Person", "Person")
+                        .WithMany()
+                        .HasForeignKey("PersonId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Person");
+                });
+
+            modelBuilder.Entity("Entity.Model.Security.UserRole", b =>
+                {
+                    b.HasOne("Entity.Model.Security.Role", "Role")
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Entity.Model.Security.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Role");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("Entity.Model.Security.View", b =>
+                {
+                    b.HasOne("Entity.Model.Security.Modulo", "Modulo")
+                        .WithMany()
+                        .HasForeignKey("ModuloId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Modulo");
                 });
 #pragma warning restore 612, 618
         }

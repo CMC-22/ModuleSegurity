@@ -4,11 +4,7 @@ using Entity.DTO;
 using Entity.Model.Security;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Data.Implements
 {
@@ -23,15 +19,24 @@ namespace Data.Implements
             this.configuration = configuration;
         }
 
-        public async Task Delete(int id)
+        public async Task Delete(int id, bool isSoftDelete = true)
         {
             var entity = await GetById(id);
             if (entity == null)
             {
-                throw new Exception("Registor no encontrado");
+                throw new Exception("Registro no encontrado");
             }
-            entity.DeleteAt = DateTime.Parse(DateTime.Today.ToString());
-            context.Views.Update(entity);
+            if (isSoftDelete)
+            {
+                //Eliminación lógica
+                entity.DeleteAt = DateTime.Now;
+                context.Views.Update(entity);
+            }
+            else
+            {
+                context.Views.Remove(entity);
+            }
+
             await context.SaveChangesAsync();
         }
 
@@ -43,7 +48,7 @@ namespace Data.Implements
 
         public async Task<View> GetById(int id)
         {
-            var sql = @"SELECT * FROM View WHERE Id = @Id ORDER BY Id ASC";
+            var sql = @"SELECT * FROM View WHERE Id = @Id AND DeleteAt IS NULL ORDER BY Id ASC";
             return await this.context.QueryFirstOrDefaulAsync<View>(sql, new { Id = id });
         }
 
@@ -65,10 +70,11 @@ namespace Data.Implements
             return await this.context.Views.AsNoTracking().Where(item => item.Name == name).FirstOrDefaultAsync();
         }
 
-        public async Task<IEnumerable<View>> GetAll()
+        public async Task<IEnumerable<ViewDto>> GetAll()
         {
-            var sql = @"SELECT * FROM View Order BY Id ASC";
-            return await this.context.QueryAsync<View>(sql);
+            var sql = @"SELECT v.* FROM views v INNER JOIN modulos m ON v.ModuloId = m.Id Order BY Id ASC";
+            var views = await this.context.QueryAsync<ViewDto>(sql);
+            return views;
         }
     }
 }

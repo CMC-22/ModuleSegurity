@@ -17,10 +17,13 @@ namespace Entity.Model.Security
         public int Document { get; set; }
         public DateTime Birth_of_date { get; set; }
         public DateTime CreateAt { get; set; }
-        public DateTime UpdateAt { get; set; }
-        public DateTime DeleteAt { get; set; }
+        public DateTime ? UpdateAt { get; set; }
+        public DateTime ? DeleteAt { get; set; }
         public int Phone { get; set; }
         public bool State {  get; set; }
        
+        //Asociaciones
+        public int CityId {  get; set; }
+        public City City { get; set; }
     }
 }

@@ -1,5 +1,6 @@
 ﻿
 
+using Business.Implements;
 using Business.Interface;
 using Entity.DTO;
 using Entity.Model.Security;
@@ -26,14 +27,16 @@ namespace Web.Controllers.Implements
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<CountriesDto>> GetById(int id)
+        public async Task<IActionResult> GetById(int id)
         {
-            var result = await _countriesBusiness.GetById(id);
-            if (result == null)
+            var country = await _countriesBusiness.GetById(id);
+
+            if (country == null)
             {
-                return NotFound();
+                return NotFound(new { Message = $"Country with ID {id} not found." });
             }
-            return Ok(result);
+
+            return Ok(country);
         }
 
         [HttpPost]

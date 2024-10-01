@@ -38,12 +38,29 @@ namespace Business.Implements
 
         public async Task<CountriesDto> GetById(int id)
         {
-            Countries countries = await this.data.GetById(id);
-            CountriesDto countriesDto = new CountriesDto();
+            try
+            {
+                Countries countries = await this.data.GetById(id);
 
-            countriesDto.Id = countries.Id;
-            countriesDto.Name = countries.Name;
-            return countriesDto;
+                if (countries == null)
+                {
+                    // Puedes retornar `null` o un objeto especial en lugar de lanzar una excepción
+                    return null; // O podrías retornar un DTO con un mensaje de error si prefieres
+                }
+
+                CountriesDto countriesDto = new CountriesDto
+                {
+                    Id = countries.Id,
+                    Name = countries.Name
+                };
+
+                return countriesDto;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         public Countries MapearDatos(Countries countries, CountriesDto entity)

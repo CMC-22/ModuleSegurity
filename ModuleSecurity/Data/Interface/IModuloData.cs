@@ -6,8 +6,8 @@ namespace Data.Interface
 {
     public interface IModuloData
     {
-        Task Delete(int id);
-        Task<IEnumerable<Modulo>> GetAll();
+        Task Delete(int id, bool isSoftDelete = true);
+        Task<IEnumerable<ModuloDto>> GetAll();
         Task<IEnumerable<DataSelectDto>> GetAllSelect();
         Task<Modulo> GetById(int id);
         Task<Modulo> Save(Modulo entity);

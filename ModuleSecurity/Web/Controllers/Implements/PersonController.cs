@@ -1,4 +1,6 @@
-﻿using Bussines.Interface;
+﻿using Business.Implements;
+using Business.Interface;
+using Bussines.Interface;
 using Entity.DTO;
 using Entity.Model.Security;
 using Microsoft.AspNetCore.Mvc;
@@ -10,22 +12,19 @@ namespace Web.Controllers.Implements
     public class PersonController : ControllerBase
     {
         private readonly IPersonBusiness _personBusiness;
+        private readonly ICityBusiness _cityBusiness;
 
-        public PersonController(IPersonBusiness personBusiness)
+        public PersonController(IPersonBusiness personBusiness, ICityBusiness cityBusiness)
         {
             _personBusiness = personBusiness;
+            _cityBusiness = cityBusiness;
         }
-
+        
         [HttpGet]
         public async Task<ActionResult<IEnumerable<PersonDto>>> GetAll()
         {
             var result = await _personBusiness.GetAll();
             return Ok(result);
-        }
-
-        private ActionResult<IEnumerable<PersonDto>> Ok(IEnumerable<PersonDto> result)
-        {
-            throw new NotImplementedException();
         }
 
         [HttpGet("{id}")]

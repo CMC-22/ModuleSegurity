@@ -6,8 +6,8 @@ namespace Data.Interface
 {
     public interface IStateData
     {
-        Task Delete(int id);
-        Task<IEnumerable<State>> GetAll();
+        Task Delete(int id, bool isSoftDelete = true);
+        Task<IEnumerable<StateDto>>GetAll();
         Task<IEnumerable<DataSelectDto>> GetAllSelect();
         Task<State> GetById(int id);
         Task<State> Save(State entity);

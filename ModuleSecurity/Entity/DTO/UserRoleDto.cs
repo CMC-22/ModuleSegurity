@@ -10,5 +10,10 @@ namespace Entity.DTO
     {
         public int Id { get; set; }
         public bool State {  get; set; }
+
+        public int UserId { get; set; }
+        public string UserName { get; set; }//propiedad de la tabla user
+        public int RoleId { get; set; }
+        public string RoleName { get; set; }//propiedad de la tabla role
     }
 }

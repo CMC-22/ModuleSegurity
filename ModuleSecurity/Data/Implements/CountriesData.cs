@@ -4,11 +4,7 @@ using Entity.DTO;
 using Entity.Model.Security;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Data.Implements
 {
@@ -23,28 +19,45 @@ namespace Data.Implements
             this.configuration = configuration;
         }
 
-        public async Task Delete(int id)
+        public async Task Delete(int id, bool isSoftDelete = true)
         {
             var entity = await GetById(id);
             if (entity == null)
             {
                 throw new Exception("Registro no encontrado");
             }
-            entity.DeleteAt = DateTime.Parse(DateTime.Today.ToString());
-            context.Countries.Update(entity);
+            if (isSoftDelete)
+            {
+                //Eliminación lógica
+                entity.DeleteAt = DateTime.Now;
+                context.Countries.Update(entity);
+            }
+            else
+            {
+                context.Countries.Remove(entity);
+            }
             await context.SaveChangesAsync();
         }
 
         public async Task<IEnumerable<DataSelectDto>> GetAllSelect()
         {
-            var sql = @"SELECT Id, CONCAT(Name) AS TextoMostrar FROM Countries WHERE DeleteAt IS NULL AND State = 1 ORDER BY Id ASC";
+            var sql = @"SELECT Id, CONCAT(Name) AS TextoMostrar FROM Countries WHERE DeleteAt IS NULL ORDER BY Id ASC";
             return await context.QueryAsync<DataSelectDto>(sql);
         }
 
         public async Task<Countries> GetById(int id)
         {
-            var sql = @"SELECT * FROM Countries WHERE Id = @Id ORDER BY Id ASC";
-            return await this.context.QueryFirstOrDefaulAsync<Countries>(sql, new { Id = id });
+            try
+            {
+                var sql = @"SELECT * FROM Countries WHERE Id = @Id AND DeleteAt IS NULL ORDER BY Id ASC";
+                Countries countries = await this.context.QueryFirstOrDefaulAsync<Countries>(sql, new { Id = id });
+                return countries;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         public async Task<Countries> Save(Countries entity)
@@ -56,6 +69,7 @@ namespace Data.Implements
 
         public async Task Update(Countries entity)
         {
+            entity.UpdateAt = DateTime.Now;
             context.Entry(entity).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             await context.SaveChangesAsync();
         }
@@ -65,10 +79,10 @@ namespace Data.Implements
             return await this.context.Countries.AsNoTracking().Where(item => item.Name == name).FirstOrDefaultAsync();
         }
 
-        public async Task<IEnumerable<Countries>> GetAll()
+        public async Task<IEnumerable<CountriesDto>> GetAll()
         {
             var sql = @"SELECT * FROM Countries Order BY Id ASC";
-            return await this.context.QueryAsync<Countries>(sql);
+            return await this.context.QueryAsync<CountriesDto>(sql);
         }
     }
 }

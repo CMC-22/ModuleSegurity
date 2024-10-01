@@ -10,10 +10,10 @@ namespace Data.Interface
 {
     public interface IRoleData
     {
-        Task Delete(int id);
+        Task Delete(int id, bool isSoftDelete = true);
         Task<Role> GetById(int id);
         Task<Role> Save(Role entity);
-        Task<IEnumerable<Role>> GetAll();
+        Task<IEnumerable<RoleDto>> GetAll();
         Task<IEnumerable<DataSelectDto>> GetAllSelect();
         Task Update(Role entity);
         Task<Role> GetByName(string name);
