@@ -17,9 +17,15 @@ namespace Entity.Model.Security
         public int Document { get; set; }
         public DateTime Birth_of_date { get; set; }
         public DateTime CreateAt { get; set; }
+<<<<<<< HEAD
         public DateTime ? UpdateAt { get; set; }
         public DateTime ? DeleteAt { get; set; }
         public int Phone { get; set; }
+=======
+        public DateTime UpdateAt { get; set; }
+        public DateTime DeleteAt { get; set; }
+        public String Phone { get; set; }
+>>>>>>> 90d74f609e8c07d10b0c9772d81c5c5d745185e0
         public bool State {  get; set; }
        
         //Asociaciones

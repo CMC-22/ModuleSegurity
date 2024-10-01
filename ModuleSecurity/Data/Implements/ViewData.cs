@@ -42,7 +42,7 @@ namespace Data.Implements
 
         public async Task<IEnumerable<DataSelectDto>> GetAllSelect()
         {
-            var sql = @"SELECT Id, CONCAT(Name, '-', Description) AS TextoMostrar FROM View WHERE DeleteAt IS NULL AND State = 1 ORDER BY Id ASC";
+            var sql = @"SELECT Id, CONCAT(Name, '-', Description) AS TextoMostrar FROM Views WHERE DeleteAt IS NULL AND State = 1 ORDER BY Id ASC";
             return await context.QueryAsync<DataSelectDto>(sql);
         }
 

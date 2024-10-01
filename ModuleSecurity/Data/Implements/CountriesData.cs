@@ -26,16 +26,8 @@ namespace Data.Implements
             {
                 throw new Exception("Registro no encontrado");
             }
-            if (isSoftDelete)
-            {
-                //Eliminación lógica
-                entity.DeleteAt = DateTime.Now;
-                context.Countries.Update(entity);
-            }
-            else
-            {
-                context.Countries.Remove(entity);
-            }
+            entity.DeleteAt = DateTime.Parse(DateTime.Today.ToString());
+            context.Countries.Update(entity);
             await context.SaveChangesAsync();
         }
 

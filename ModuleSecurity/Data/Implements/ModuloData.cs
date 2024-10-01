@@ -42,13 +42,13 @@ namespace Data.Implements
 
         public async Task<IEnumerable<DataSelectDto>> GetAllSelect()
         {
-            var sql = @"SELECT Id, CONCAT(Name, '-', Description) AS TextoMostrar FROM Modulo WHERE DeleteAt IS NULL AND State = 1 ORDER BY Id ASC";
+            var sql = @"SELECT Id, CONCAT(Name, '-', Description) AS TextoMostrar FROM Modulos WHERE DeleteAt IS NULL AND State = 1 ORDER BY Id ASC";
             return await context.QueryAsync<DataSelectDto>(sql);
         }
 
         public async Task<Modulo> GetById(int id)
         {
-            var sql = @"SELECT * FROM Modulo WHERE Id = @Id ORDER BY Id ASC";
+            var sql = @"SELECT * FROM Modulos WHERE Id = @Id ORDER BY Id ASC";
             return await this.context.QueryFirstOrDefaulAsync<Modulo>(sql, new { Id = id });
         }
 

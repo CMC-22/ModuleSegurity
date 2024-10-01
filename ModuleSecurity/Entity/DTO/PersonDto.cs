@@ -16,7 +16,7 @@ namespace Entity.DTO
         public string Type_document { get; set; }
         public int Document {  get; set; }
         public DateTime Birth_of_date { get; set; }
-        public int Phone { get; set; }
+        public String Phone { get; set; }
         public bool State {  get; set; }
         public  int CityId { get; set; }
         public String? CityName {  get; set; } //propiedad de la tabla city
