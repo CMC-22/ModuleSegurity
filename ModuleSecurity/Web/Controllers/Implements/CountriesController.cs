@@ -1,16 +1,15 @@
-﻿
-
-using Business.Implements;
+﻿using Business.Implements;
 using Business.Interface;
 using Entity.DTO;
 using Entity.Model.Security;
 using Microsoft.AspNetCore.Mvc;
+using Web.Controllers.Interfaces;
 
 namespace Web.Controllers.Implements
 {
     [ApiController]
     [Route("[controller]")]
-    public class CountriesController : ControllerBase
+    public class CountriesController : ControllerBase, ICountriesController
     {
         private readonly ICountriesBusiness _countriesBusiness;
 
@@ -60,11 +59,10 @@ namespace Web.Controllers.Implements
             await _countriesBusiness.Update(entity);
             return NoContent();
         }
-
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult>Delete(int id, [FromQuery] bool isSoftDelete)
         {
-            await _countriesBusiness.Delete(id);
+            await _countriesBusiness.Delete(id, isSoftDelete);
             return NoContent();
         }
     }

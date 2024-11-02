@@ -10,6 +10,7 @@
         "dependencies": {
           "Business": "1.0.0",
           "Entity": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "8.0.8",
           "Microsoft.EntityFrameworkCore.Design": "8.0.8",
           "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.21.0",
           "Swashbuckle.AspNetCore": "6.4.0"

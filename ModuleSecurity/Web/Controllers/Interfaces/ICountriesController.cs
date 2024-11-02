@@ -9,6 +9,6 @@ namespace Web.Controllers.Interfaces
         Task<ActionResult<IEnumerable<CountriesDto>>> GetAll();
         public Task<ActionResult<Countries>> Save([FromBody] CountriesDto countriesDto);
         public Task<IActionResult> Update([FromBody] CountriesDto countriesDto);
-        public Task<IActionResult> Delete(int id);
+        public Task<IActionResult> Delete(int id, bool isSoftDelete);
     }
 }

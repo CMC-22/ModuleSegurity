@@ -1,4 +1,4 @@
-﻿using Bussines.Interface;
+﻿ using Bussines.Interface;
 using Data.Interface;
 using Entity.DTO;
 using Entity.Model.Security;
@@ -18,6 +18,11 @@ namespace Bussines.Implements
         public async Task Delete(int id)
         {
             await this.data.Delete(id);
+        }
+
+        public Task Delete(int id, bool isSoftDelete)
+        {
+            throw new NotImplementedException();
         }
 
         public async Task<IEnumerable<RoleDto>> GetAll()

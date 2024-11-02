@@ -6,7 +6,7 @@ namespace Business.Interface
 {
     public interface ICountriesBusiness
     {
-        Task Delete(int id);
+        Task Delete(int id, bool isSoftDelete);
         Task<IEnumerable<CountriesDto>> GetAll();
         Task<CountriesDto> GetById(int id);
         Task<Countries> Save(CountriesDto entity);

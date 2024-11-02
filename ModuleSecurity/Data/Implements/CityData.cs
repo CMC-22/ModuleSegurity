@@ -4,11 +4,7 @@ using Entity.DTO;
 using Entity.Model.Security;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Data.Implements
 {
@@ -23,9 +19,9 @@ namespace Data.Implements
             this.configuration = configuration;
         }
 
-        public async Task Delete(int id, bool isSoftDelete = true)
+        public async Task Delete(int Id, bool isSoftDelete = true)
         {
-            var entity = await GetById(id);
+            var entity = await GetById(Id);
             if (entity == null)
             {
                 throw new Exception("Registro no encontrado");
@@ -33,7 +29,7 @@ namespace Data.Implements
             if (isSoftDelete)
             { 
             //ELIMINACION LOGICO    
-            entity.DeleteAt = DateTime.Now;
+            entity.DeleteAt = DateTime.Today;
             context.Citys.Update(entity);
         }
         else
@@ -45,7 +41,7 @@ namespace Data.Implements
 
         public async Task<IEnumerable<DataSelectDto>> GetAllSelect()
         {
-            var sql = @"SELECT Id, CONCAT(Name, '-', Postalcode) AS TextoMostrar FROM citys WHERE DeleteAt IS NULL ORDER BY Id ASC";
+            var sql = @"SELECT Id, CONCAT(Name, '-', Postalcode, '-', StateId) AS TextoMostrar FROM citys WHERE DeleteAt IS NULL AND State = 1 ORDER BY Id ASC";
             return await context.QueryAsync<DataSelectDto>(sql);
         }
 
@@ -76,9 +72,8 @@ namespace Data.Implements
 
         public async Task<IEnumerable<CityDto>> GetAll()
         {
-            var sql = @"SELECT c.*, s.Name As StateName FROM citys c INNER JOIN states s ON c.StateId = s.Id Order BY Id ASC";
-            var citys = await this.context.QueryAsync<CityDto>(sql);
-            return citys;
+            var sql = @"SELECT c.Id, c.Name, c.PostalCode, c.StateId, s.Name AS State FROM citys AS c INNER JOIN State AS s ON s.Id = c.StateId WHERE ISNULL(c.DeleteAt)";
+            return await context.QueryAsync<CityDto>(sql);
         }
     }
 }

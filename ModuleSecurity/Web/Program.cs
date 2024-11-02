@@ -2,17 +2,11 @@ using Entity.Context;
 using Microsoft.EntityFrameworkCore;
 using Business.Interface;
 using Business.Implements;
-<<<<<<< HEAD
+
 using Data.Implements;
 using Data.Interface;
 using Bussines.Implements;
 using Bussines.Interface;
-=======
-using Data.Interface;
-using Data.Implements;
-using Bussines.Interface;
-using Bussines.Implements;
->>>>>>> 90d74f609e8c07d10b0c9772d81c5c5d745185e0
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -34,7 +28,6 @@ builder.Services.AddScoped<ICityData, CityData>();
 builder.Services.AddScoped<ICountriesBusiness, CountriesBusiness>();
 builder.Services.AddScoped<ICountriesData, CountriesData>();
 
-<<<<<<< HEAD
 builder.Services.AddScoped<IUserBusiness, UserBusiness>();
 builder.Services.AddScoped<IUserData, UserData>();  
 
@@ -44,8 +37,6 @@ builder.Services.AddScoped<IUserRoleData, UserRoleData>();
 builder.Services.AddScoped<IViewBusiness, ViewBusiness>();
 builder.Services.AddScoped<IViewData, ViewData>();
 
-=======
->>>>>>> 90d74f609e8c07d10b0c9772d81c5c5d745185e0
 builder.Services.AddScoped<IModuloBusiness, ModuloBusiness>();
 builder.Services.AddScoped<IModuloData, ModuloData>();
 
@@ -60,23 +51,6 @@ builder.Services.AddScoped<IRoleViewData, RoleViewData>();
 
 builder.Services.AddScoped<IStateBusiness, StateBusiness>();
 builder.Services.AddScoped<IStateData, StateData>();
-
-<<<<<<< HEAD
-=======
-builder.Services.AddScoped<IUserBusiness, UserBusiness>();
-builder.Services.AddScoped<IUserData, UserData>();
-
-builder.Services.AddScoped<IUserRoleBusiness, UserRoleBusiness>();
-builder.Services.AddScoped<IUserRoleData, UserRoleData>();
-
-builder.Services.AddScoped<IViewBusiness, ViewBusiness>();
-builder.Services.AddScoped<IViewData, ViewData>();
-
-
-
-
-
->>>>>>> 90d74f609e8c07d10b0c9772d81c5c5d745185e0
 
 var app = builder.Build();
 

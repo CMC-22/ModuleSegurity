@@ -26,18 +26,22 @@ namespace Business.Implements
             await this.data.Delete(id);
         }
 
+        public async Task LogicalDelete(int id)
+        {
+            await this.data.LogicalDelete(id);
+        }
         public async Task<IEnumerable<CityDto>> GetAll()
         {
-            IEnumerable<City> citys = (IEnumerable<City>)await this.data.GetAll();
-            var cityDtos = citys.Select(city => new CityDto
+            IEnumerable<CityDto> citys = await this.data.GetAll();
+            /*var cityDtos = citys.Select(city => new CityDto
             {
                 Id = city.Id,
                 Name = city.Name,
                 Postalcode = city.Postalcode,
                 StateId = city.StateId,
                 StateName = city.State?.Name
-            });
-            return cityDtos;
+            });*/
+            return citys;
         }
 
         public async Task<IEnumerable<DataSelectDto>> GetAllSelect()
@@ -68,8 +72,10 @@ namespace Business.Implements
 
         public async Task<City> Save(CityDto entity)
         {
-            City city = new City();
-            city.CreateAt = DateTime.Now.AddHours(-5);
+            City city = new City
+            {
+                CreateAt = DateTime.Now.AddHours(-5)
+            };
             city = this.MapearDatos(city, entity);
             return await this.data.Save(city);
         }
@@ -77,6 +83,7 @@ namespace Business.Implements
         public async Task Update(CityDto entity)
         {
             City city = await this.data.GetById(entity.Id);
+            city.UpdateAt = DateTime.Now.AddHours(-5);
             if (city == null)
             {
                 throw new Exception("Registro no encontrado");

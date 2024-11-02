@@ -20,15 +20,20 @@ namespace Business.Implements
             await this.data.Delete(id);
         }
 
+        public async Task LogicalDelete(int id)
+        {
+            await this.data.LogicalDelete(id);
+        }
+
         public async Task<IEnumerable<CountriesDto>> GetAll()
         {
-            IEnumerable<Countries> countries = (IEnumerable<Countries>)await this.data.GetAll();
-            var countriesDto = countries.Select(countries => new CountriesDto
+            IEnumerable<CountriesDto> countries = await this.data.GetAll();
+            /*var countriesDto = countries.Select(countries => new CountriesDto
             {
                 Id = countries.Id,
                 Name = countries.Name,
-            });
-            return countriesDto;
+            })*/
+            return countries;
         }
 
         public async Task<IEnumerable<DataSelectDto>> GetAllSelect()

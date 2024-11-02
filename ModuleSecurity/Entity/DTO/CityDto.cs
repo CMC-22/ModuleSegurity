@@ -13,6 +13,6 @@ namespace Entity.DTO
         public int Postalcode { get; set; }
 
         public int StateId { get; set; }
-        public string ? StateName { get; set; } //propiedad de la tabla city
+        public string ? State { get; set; } //propiedad de la tabla city
     }
 }

@@ -2,12 +2,13 @@
 using Entity.DTO;
 using Entity.Model.Security;
 using Microsoft.AspNetCore.Mvc;
+using Web.Controllers.Interfaces;
 
 namespace Web.Controllers.Implements
 {
     [ApiController]
     [Route("[controller]")]
-    public class RoleController : ControllerBase
+    public class RoleController : ControllerBase, IRoleController
     {
         private readonly IRoleBusiness _roleBusiness;
 
@@ -57,9 +58,9 @@ namespace Web.Controllers.Implements
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> Delete(int id, bool isSoftDelete)
         {
-            await _roleBusiness.Delete(id);
+            await _roleBusiness.Delete(id,isSoftDelete);
             return NoContent();
         }
     }

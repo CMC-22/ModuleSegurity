@@ -22,7 +22,7 @@ namespace Business.Implements
 
         public async Task<IEnumerable<ModuloDto>> GetAll()
         {
-            IEnumerable<Modulo> modulos = await this.data.GetAll();
+            IEnumerable<Modulo> modulos = (IEnumerable<Modulo>)await this.data.GetAll();
             var moduloDtos = modulos.Select(modulo => new ModuloDto
             {
                 Id = modulo.Id,

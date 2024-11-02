@@ -46,13 +46,13 @@ namespace Data.Implements
 
         public async Task<IEnumerable<DataSelectDto>> GetAllSelect()
         {
-            var sql = @"SELECT Id, CONCAT(Name, '-', Description) AS TextoMostrar FROM Role WHERE DeleteAt IS NULL ORDER BY Id ASC";
+            var sql = @"SELECT Id, CONCAT(Name, '-', Description, '-', State) AS TextoMostrar FROM roles WHERE DeleteAt IS NULL State = 1 ORDER BY Id ASC";
             return await context.QueryAsync<DataSelectDto>(sql);
         }
 
         public async Task<Role> GetById(int id)
         {
-            var sql = @"SELECT * FROM Role WHERE Id = @Id AND DeleteAt IS NULL ORDER BY Id ASC";
+            var sql = @"SELECT * FROM roles WHERE Id = @Id AND DeleteAt IS NULL ORDER BY Id ASC";
             return await this.context.QueryFirstOrDefaulAsync<Role>(sql, new {Id = id});
         }
 
@@ -65,6 +65,7 @@ namespace Data.Implements
 
         public async Task Update(Role entity)
         {
+            entity.UpdateAt = DateTime.Now;
             context.Entry(entity).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             await context.SaveChangesAsync();
         }

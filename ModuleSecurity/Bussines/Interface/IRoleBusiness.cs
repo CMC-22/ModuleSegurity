@@ -6,7 +6,7 @@ namespace Bussines.Interface
 {
     public interface IRoleBusiness
     {
-        Task Delete(int id);
+        Task Delete(int id, bool isSoftDelete);
         Task<IEnumerable<RoleDto>> GetAll();
         Task<IEnumerable<DataSelectDto>> GetAllSelect();
         Task<RoleDto> GetById(int id);

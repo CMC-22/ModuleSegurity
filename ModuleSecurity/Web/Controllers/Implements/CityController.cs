@@ -1,16 +1,16 @@
-﻿using Business.Implements;
+﻿
+using Business.Implements;
 using Business.Interface;
-using Bussines.Interface;
 using Entity.DTO;
 using Entity.Model.Security;
 using Microsoft.AspNetCore.Mvc;
-using System.ComponentModel.DataAnnotations;
+using Web.Controllers.Interfaces;
 
 namespace Web.Controllers.Implements
 {
     [ApiController]
     [Route("[controller]")]
-    public class CityController : ControllerBase
+    public class CityController : ControllerBase, ICityController
     {
         private readonly ICityBusiness _cityBusiness;
 
@@ -60,10 +60,15 @@ namespace Web.Controllers.Implements
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> Delete(int id, [FromQuery] bool isSoftDelete)
         {
-            await _cityBusiness.Delete(id);
+            await _cityBusiness.Delete(id, isSoftDelete);
             return NoContent();
+        }
+
+        Task ICityController.Delete(int id, bool isSoftDelete)
+        {
+            throw new NotImplementedException();
         }
     }
 }

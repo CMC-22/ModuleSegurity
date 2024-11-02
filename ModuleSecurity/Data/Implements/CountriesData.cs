@@ -19,37 +19,34 @@ namespace Data.Implements
             this.configuration = configuration;
         }
 
-        public async Task Delete(int id, bool isSoftDelete = true)
+        public async Task Delete(int Id, bool isSoftDelete = true)
         {
-            var entity = await GetById(id);
+            var entity = await GetById(Id);
             if (entity == null)
             {
                 throw new Exception("Registro no encontrado");
             }
-            entity.DeleteAt = DateTime.Parse(DateTime.Today.ToString());
+            if (isSoftDelete)
+            {
+                entity.DeleteAt = DateTime.Today;
+                context.Countries.Update(entity);
+            }
+            else { 
             context.Countries.Update(entity);
+            }
             await context.SaveChangesAsync();
         }
 
         public async Task<IEnumerable<DataSelectDto>> GetAllSelect()
         {
-            var sql = @"SELECT Id, CONCAT(Name) AS TextoMostrar FROM Countries WHERE DeleteAt IS NULL ORDER BY Id ASC";
+            var sql = @"SELECT Id, CONCAT(Name) AS TextoMostrar FROM Countries WHERE DeleteAt IS NULL State = 1 ORDER BY Id ASC";
             return await context.QueryAsync<DataSelectDto>(sql);
         }
 
         public async Task<Countries> GetById(int id)
-        {
-            try
-            {
+        {   
                 var sql = @"SELECT * FROM Countries WHERE Id = @Id AND DeleteAt IS NULL ORDER BY Id ASC";
-                Countries countries = await this.context.QueryFirstOrDefaulAsync<Countries>(sql, new { Id = id });
-                return countries;
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
+                return await this.context.QueryFirstOrDefaulAsync<Countries>(sql, new { Id = id });    
         }
 
         public async Task<Countries> Save(Countries entity)
@@ -73,7 +70,7 @@ namespace Data.Implements
 
         public async Task<IEnumerable<CountriesDto>> GetAll()
         {
-            var sql = @"SELECT * FROM Countries Order BY Id ASC";
+            var sql = @"SELECT * FROM countries WHERE DeleteAt IS NULL AND State = 1 Order BY Id ASC";
             return await this.context.QueryAsync<CountriesDto>(sql);
         }
     }

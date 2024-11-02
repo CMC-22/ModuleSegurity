@@ -9,6 +9,6 @@ namespace Web.Controllers.Interfaces
         Task<ActionResult<IEnumerable<RoleDto>>> GetAll();
         public Task<ActionResult<Role>> Save([FromBody] RoleDto roleDto);
         public Task<IActionResult> Update([FromBody] RoleDto roleDto);
-        public Task<IActionResult> Delete(int id);
+        public Task<IActionResult> Delete(int id, bool isSoftDelete);
     }
 }
